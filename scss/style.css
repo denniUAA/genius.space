@@ -38,21 +38,29 @@
   --color-brand: #819b57;
   --color-brand-dark: #465929;
   --color-primary-light: #faf4ea;
+  --color-secondary-dark: #a18268;
   --color-primary-dark: #31261a;
   --color-copyright: #a18268;
+  --color-border: #cfcfbc;
 }
 
 /* global */
+* {
+  box-sizing: border-box;
+}
+
 body {
   color: var(--color-primary-dark);
   font-family: Poppins;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
+  margin: 0;
+  background-color: var(--color-primary-light);
 }
 
-address {
-  font-style: normal;
+h1 h2 h3 h4 h5 h6 p {
+  margin-top: 0;
 }
 
 h2 {
@@ -62,10 +70,38 @@ h2 {
 }
 
 ul {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1288px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+/* section */
+.section {
+  padding: 48px 0;
+}
+
+address {
+  font-style: normal;
+}
+
+/* button */
 .button {
+  padding: 16px 32px;
   border-radius: 8px;
   border: 2px solid var(--color-brand);
   background-color: var(--color-brand);
@@ -74,7 +110,7 @@ ul {
   font-weight: 600;
   line-height: 1.5;
 }
-/* batton */
+
 .button:hover {
   color: #465929;
   background-color: transparent;
@@ -89,11 +125,52 @@ ul {
 .meny-link:hover {
   color: var(--color-brand);
   text-decoration: none;
-  font-weight: 600;
 }
 
-/* title */
+/* header */
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 40px;
+}
+
+.header-meny {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+header {
+  background-color: gray; /* видалити */
+}
+
+/* hero */
+.hero-section {
+  padding: 272px 0; /*  падинг по уроку и макету 272px но на странице отображаясь уменьшил до 215px*/
+  margin-bottom: 0;
+  background-image: url('../img/hero-background.jpg');
+  /* linear-gradient(
+      103deg,
+      rgba(18, 18, 17, 0.78) 2.03%,
+      rgba(18, 18, 17, 0.6) 58.46%,
+      rgba(18, 18, 17, 0) 90.36%
+    ); */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
 .hero-title {
+  margin: 0 auto;
   color: var(--color-primary-light);
   text-align: center;
   font-size: 128px;
@@ -105,21 +182,48 @@ ul {
 }
 
 /* advantages */
+.advantages-section {
+  background-color: var(--color-brand);
+  padding: 16px 0;
+}
 
 .advantages-list {
-  background-color: var(--color-brand);
-  color: var(--color-primary-light);
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
 }
 
 .advantages-item {
   font-style: 20px;
+  color: var(--color-primary-light);
 }
 
 .section-title .accent {
   color: var(--color-brand-dark);
 }
 
-/* traditions */
+.section-title.centered {
+  text-align: center;
+}
+
+/* traditions-section  */
+.traditions-section {
+  padding-top: 96px;
+}
+
+.traditions-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.traditions-content {
+  max-width: 710px;
+}
+
+.traditions-title {
+  margin-bottom: 42px;
+}
 .traditions-text .brand {
   color: var(--color-brand);
   font-weight: 600;
@@ -129,23 +233,81 @@ ul {
   text-transform: uppercase;
 }
 
+.traditions-text.limited-first {
+  max-width: 600px;
+}
+
+.traditions-text.limited {
+  max-width: 310px;
+}
+
 /* chefs section */
 .chefs-title {
+  margin-bottom: 16px;
   font-size: 40px;
   font-weight: 600;
 }
 
+.chefs-section-title {
+  margin: 0 auto 80px;
+  max-width: 520px;
+}
+
+.chefs-section-title::after,
+.chefs-section-title::before {
+  display: block;
+  width: 352px;
+  border: 2px solid var(--color-border);
+  content: '';
+}
+
+.chefs-photo {
+  border-radius: 4px 4px 4px 200px;
+  background: #d9d9d9;
+  box-shadow: -16px 16px 0 0 var(--color-primary-light),
+    -16px 16px 0 2px var(--color-secondary-dark);
+}
+
 /* format section */
+.formats-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.formats-items {
+  flex-basis: calc((100% - 40px) / 3);
+}
+
+.format-card {
+  height: 444px;
+  border-radius: 16px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(49, 38, 26, 0) 55.21%,
+    rgba(49, 38, 26, 0.71) 72.92%,
+    #31261a 100%
+  );
+}
 
 .format-title {
   font-size: 24px;
   font-weight: 600;
 }
 
+.formats-title {
+  margin-bottom: 80px;
+}
+
 .format-text {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.5;
+}
+
+/* contact  */
+.contact-title {
+  margin-bottom: 16px;
 }
 
 /* footer */
@@ -165,4 +327,12 @@ ul {
 .address-copyright {
   font-size: 14px;
   color: var(--color-copyright);
+}
+
+.footer {
+  background-image: url('../img/footer-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-primary-dark);
 }
