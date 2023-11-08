@@ -113,7 +113,7 @@ address {
   font-style: normal;
 }
 
-/* button */
+/* button  make call*/
 .button {
   padding: 16px 32px;
   border-radius: 8px;
@@ -260,6 +260,29 @@ header {
 }
 
 /* chefs section */
+.chefs-section-title {
+  position: relative;
+  margin: 0 auto 80px;
+
+}
+
+.chefs-section-title::after,
+.chefs-section-title::before {
+  position: absolute;
+  bottom: 24px;
+  width: 352px;
+  border: 2px solid var(--color-border);
+  content: '';
+}
+
+.chefs-section-title::before {
+  left: 0;
+}
+
+.chefs-section-title::after {
+  right: 0;
+}
+
 .chefs-title {
   margin-bottom: 16px;
   font-size: 40px;
@@ -272,19 +295,6 @@ header {
 
 .chefs-text p:last-child {
   margin-bottom: 0;
-}
-
-.chefs-section-title {
-  margin: 0 auto 80px;
-  max-width: 520px;
-}
-
-.chefs-section-title::after,
-.chefs-section-title::before {
-  display: block;
-  width: 352px;
-  border: 2px solid var(--color-border);
-  content: '';
 }
 
 .chefs-list {
@@ -395,12 +405,35 @@ header {
 
 /* footer */
 .footer {
+  position: relative;
   padding: 32px 0;
   background-image: url('../img/footer-background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-color: var(--color-primary-dark);
+}
+
+.footer:before,
+.footer:after {
+  position: absolute;
+  bottom: 0;
+  background-repeat: no-repeat;
+  content: '';
+}
+
+.footer:before {
+  width: 180px;
+  height: 120px;
+  left: 0;
+  background-image: url('../img/decor-bread-small.png');
+}
+
+.footer:after {
+  width: 380px;
+  height: 190px;
+  right: 0;
+  background-image: url('../img/decor-bread-large.png');
 }
 
 .footer-container {
@@ -453,5 +486,39 @@ header {
 
 .address-icon:hover {
   fill: var(--color-brand);
+
+}
+
+/* modal window */
+.backdrop {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+
+}
+
+.modal {
+  position: relative;
+  height: 880px;
+  width: 880px;
+  background-color: var(--color-primary-light);
+  border-radius: 32px;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-btn-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 
 }
