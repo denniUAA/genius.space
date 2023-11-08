@@ -45,7 +45,9 @@
 }
 
 /* global */
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -59,8 +61,18 @@ body {
   background-color: var(--color-primary-light);
 }
 
-h1 h2 h3 h4 h5 h6 p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin-top: 0;
+}
+
+a {
+  display: inline-block;
 }
 
 h2 {
@@ -90,6 +102,7 @@ ul {
   margin: 0 auto;
   padding: 0 24px;
 }
+
 /* section */
 .section {
   padding: 48px 0;
@@ -122,6 +135,7 @@ address {
   text-decoration: none;
   font-weight: 400;
 }
+
 .meny-link:hover {
   color: var(--color-brand);
   text-decoration: none;
@@ -150,12 +164,14 @@ address {
 }
 
 header {
-  background-color: gray; /* видалити */
+  background-color: gray;
+  /* видалити */
 }
 
 /* hero */
 .hero-section {
-  padding: 272px 0; /*  падинг по уроку и макету 272px но на странице отображаясь уменьшил до 215px*/
+  padding: 272px 0;
+  /*  падинг по уроку и макету 272px но на странице отображаясь уменьшил до 215px*/
   margin-bottom: 0;
   background-image: url('../img/hero-background.jpg');
   /* linear-gradient(
@@ -224,6 +240,7 @@ header {
 .traditions-title {
   margin-bottom: 42px;
 }
+
 .traditions-text .brand {
   color: var(--color-brand);
   font-weight: 600;
@@ -248,6 +265,14 @@ header {
   font-weight: 600;
 }
 
+.chefs-text p {
+  margin-bottom: 24px;
+}
+
+.chefs-text p:last-child {
+  margin-bottom: 0;
+}
+
 .chefs-section-title {
   margin: 0 auto 80px;
   max-width: 520px;
@@ -259,6 +284,21 @@ header {
   width: 352px;
   border: 2px solid var(--color-border);
   content: '';
+}
+
+.chefs-list {
+  display: flex;
+  gap: 40px 30px;
+  flex-wrap: wrap;
+}
+
+.chefs-card {
+  display: flex;
+  gap: 30px;
+}
+
+.shefs-item {
+  flex-basis: calc((100% - 30px) /2);
 }
 
 .chefs-photo {
@@ -282,12 +322,10 @@ header {
 .format-card {
   height: 444px;
   border-radius: 16px;
-  background-image: linear-gradient(
-    180deg,
-    rgba(49, 38, 26, 0) 55.21%,
-    rgba(49, 38, 26, 0.71) 72.92%,
-    #31261a 100%
-  );
+  background-image: linear-gradient(180deg,
+      rgba(49, 38, 26, 0) 55.21%,
+      rgba(49, 38, 26, 0.71) 72.92%,
+      #31261a 100%);
 }
 
 .format-title {
@@ -305,12 +343,89 @@ header {
   line-height: 1.5;
 }
 
+.formats-container {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+
+
+}
+
+/* carousel */
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  fill: var(--color-primary-dark);
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.carousel-button:hover {
+  background-color: var(--color-primary-dark);
+  fill: var(--color-primary-light);
+}
+
 /* contact  */
+.contact-section {
+  padding-bottom: 96px;
+}
+
 .contact-title {
   margin-bottom: 16px;
 }
 
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
+
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+}
+
 /* footer */
+.footer {
+  padding: 32px 0;
+  background-image: url('../img/footer-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-primary-dark);
+}
+
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav,
+.footer-address {
+  display: flex;
+  flex-grow: 1;
+  gap: 20px;
+}
+
+.footer-logo,
+.footer-meny {
+  flex-grow: 1;
+  gap: 20px;
+}
+
+.address-list,
+.address-info {
+  flex-grow: 1;
+  gap: 20px;
+}
+
 .address-link {
   font-size: 16px;
   font-weight: 300;
@@ -321,7 +436,7 @@ header {
 .address-link:hover {
   font-size: 16px;
   font-weight: 300;
-  color: var(--color-brand-light);
+  color: var(--color-brand);
 }
 
 .address-copyright {
@@ -329,10 +444,13 @@ header {
   color: var(--color-copyright);
 }
 
-.footer {
-  background-image: url('../img/footer-background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: var(--color-primary-dark);
+.address-icon {
+  fill: var(--color-primary-light);
+  height: 32px;
+  width: 32px;
+}
+
+.address-icon:hover {
+  fill: var(--color-brand);
+
 }
