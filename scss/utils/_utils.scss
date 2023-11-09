@@ -1,0 +1,9 @@
+/* схований елемент для того щоб користувач використовуючи диктовку не розгубився при переході з одного блоку до іншого */
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
