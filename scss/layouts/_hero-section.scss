@@ -1,6 +1,5 @@
 .hero-section {
   padding: 272px 0;
-  /*  падинг по уроку и макету 272px но на странице отображаясь уменьшил до 215px*/
   margin-bottom: 0;
   background-image: linear-gradient(
       103deg,
@@ -12,16 +11,12 @@
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-}
 
-.hero-title {
-  margin: 0 auto;
-  color: var(--color-primary-light);
-  text-align: center;
-  font-size: 128px;
-  font-weight: 900;
-}
-
-.hero-title .accent {
-  color: var(--color-brand);
+  &__title {
+    margin: 0 auto;
+    color: var(--color-primary-light);
+    text-align: center;
+    font-size: 128px;
+    font-weight: 900;
+  }
 }

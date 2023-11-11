@@ -1,0 +1,23 @@
+.formats-section {
+  &__container {
+    position: relative;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  &__items {
+    flex-basis: calc((100% - 40px) / 3);
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__title {
+    margin-bottom: 80px;
+  }
+}
