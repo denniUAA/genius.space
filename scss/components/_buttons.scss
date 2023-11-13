@@ -9,9 +9,9 @@
   font-weight: 600;
   line-height: 1.5;
   transition: color 0.3s, background-color 0.3s;
-}
 
-.button:hover {
-  color: #465929;
-  background-color: transparent;
+  &:hover {
+    color: #465929;
+    background-color: transparent;
+  }
 }

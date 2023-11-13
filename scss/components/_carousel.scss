@@ -1,6 +1,5 @@
 /* carousel */
-.carousel__button {
-  display: flex;
+.carousel-button {
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -17,8 +16,8 @@
     background-color: var(--color-primary-dark);
     fill: var(--color-primary-light);
   }
-}
 
-.carousel__button.next {
-  transform: rotate(180deg);
+  &.next {
+    transform: rotate(180deg);
+  }
 }
